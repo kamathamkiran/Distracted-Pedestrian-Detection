@@ -20,7 +20,12 @@ if uploaded_file is not None:
             output_path = run_inference(temp_input.name)
 
         st.success("✅ Detection complete!")
-        st.video(output_path)
+
+        if os.path.exists("output.mp4"):
+            st.video("output.mp4")
+        else:
+            st.error("output.mp4 not found")
+            
         with open(output_path, "rb") as file:
             btn = st.download_button(
                 label="Download Processed Video",
