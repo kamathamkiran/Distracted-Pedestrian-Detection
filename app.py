@@ -21,15 +21,15 @@ if uploaded_file is not None:
 
         st.success("✅ Detection complete!")
 
-        if os.path.exists("output.mp4"):
-            st.video("output.mp4")
+        if os.path.exists(output_path):
+            st.video(output_path)
         else:
-            st.error("output.mp4 not found")
-            
+            st.error("Error in loading output video")
+
         with open(output_path, "rb") as file:
             btn = st.download_button(
                 label="Download Processed Video",
                 data=file,
-                file_name="output.mp4",
+                file_name=output_path,
                 mime="video/mp4"
             )
