@@ -21,8 +21,8 @@ if uploaded_file is not None:
 
         st.success("✅ Detection complete!")
 
-        if os.path.exists(output_path):
-            st.video(output_path)
+        if os.path.exists("output.mp4"):
+            st.video("output.mp4")
         else:
             st.error("Error in loading output video")
 
