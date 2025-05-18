@@ -30,6 +30,6 @@ if uploaded_file is not None:
             btn = st.download_button(
                 label="Download Processed Video",
                 data=file,
-                file_name=output_path,
+                file_name="output.mp4", 
                 mime="video/mp4"
             )
