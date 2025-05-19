@@ -29,7 +29,7 @@ if uploaded_file is not None:
         #     st.error("Error in loading output video")
 
         with open(output_path, "rb") as file:
-            st.video(output_path)
+            st.video(output_path, format="video/mp4")
             btn = st.download_button(
                 label="Download Processed Video",
                 data=file,
