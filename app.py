@@ -4,6 +4,8 @@ import tempfile
 import os
 from inference import run_inference
 
+os.environ["STREAMLIT_WATCHER_TYPE"] = "none"
+
 st.title("📱 Pedestrian Distraction Detection")
 
 uploaded_file = st.file_uploader("Upload a video", type=["mp4", "mov", "avi"])
