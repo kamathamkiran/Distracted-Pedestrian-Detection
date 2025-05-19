@@ -1,10 +1,7 @@
 # app.py
 import streamlit as st
 import tempfile
-import os
 from inference import run_inference
-
-os.environ["STREAMLIT_WATCHER_TYPE"] = "none"
 
 st.title("📱 Pedestrian Distraction Detection")
 
@@ -23,13 +20,13 @@ if uploaded_file is not None:
 
         st.success("✅ Detection complete!")
 
-        # if os.path.exists("output.mp4"):
-        #     st.video(output_path)
-        # else:
-        #     st.error("Error in loading output video")
+        with open(output_path, "rb") as video_file:
+            video_bytes = video_file.read()
+
+        # Display the video in the Streamlit app
+        st.video(video_bytes)
 
         with open(output_path, "rb") as file:
-            st.video(file.read())
             btn = st.download_button(
                 label="Download Processed Video",
                 data=file,
