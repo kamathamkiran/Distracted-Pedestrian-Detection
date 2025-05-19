@@ -7,7 +7,6 @@ import torch.nn as nn
 from PIL import Image
 from ultralytics import YOLO
 import mediapipe as mp
-import os
 
 # Load YOLOv8 model
 yolo_model = YOLO("yolov8n.pt")
