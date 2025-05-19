@@ -20,12 +20,6 @@ if uploaded_file is not None:
 
         st.success("✅ Detection complete!")
 
-        with open(output_path, "rb") as video_file:
-            video_bytes = video_file.read()
-
-        # Display the video in the Streamlit app
-        st.video(video_bytes)
-
         with open(output_path, "rb") as file:
             btn = st.download_button(
                 label="Download Processed Video",
