@@ -82,8 +82,8 @@ def extract_gait_features(landmarks):
 
 def run_inference(input_video_path):
     cap = cv2.VideoCapture(input_video_path)
-    fourcc = cv2.VideoWriter_fourcc(*'avc1')
-    output_video_path = os.path.join("/tmp", "output.mp4")
+    fourcc = cv2.VideoWriter_fourcc(*'mp4v')
+    output_video_path = "output.mp4"
     out = cv2.VideoWriter(output_video_path, fourcc, 30.0, (int(cap.get(3)), int(cap.get(4))))
     prev_gray = None
     prev_centers = []
