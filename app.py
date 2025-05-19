@@ -18,6 +18,7 @@ if uploaded_file is not None:
             temp_input.close()
 
             output_path = run_inference(temp_input.name)
+            print(output_path)
 
         st.success("✅ Detection complete!")
 
